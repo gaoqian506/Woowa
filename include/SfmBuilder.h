@@ -1,12 +1,24 @@
 
 
+#ifndef __WW_SFM_BUILDER_HEADER__
+#define __WW_SFM_BUILDER_HEADER__
+
+#include "SiftExtractor.h"
+
+
 namespace ww {
 
 class SfmBuilder {
 
 public:
-	static void build();
+	void build();
+
+private:
+
+	SiftExtractor m_extractor;
 
 };
 
 }
+
+#endif
