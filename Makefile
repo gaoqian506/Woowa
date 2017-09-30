@@ -1,5 +1,8 @@
 
 INCLUDE_DIR = -Iinclude
+LIB_DIR = 
+LIBS = -lopencv_core -lopencv_highgui
+FLAG = -g
 SRCS=$(wildcard  src/*.cpp)
 OBJS=$(SRCS:%.cpp=%.o)
 TARGET = woowa
@@ -9,11 +12,10 @@ TARGET = woowa
 #	@echo $(OBJS)
 
 $(TARGET) : $(OBJS)
-
-	g++ $(OBJS) -o $(TARGET)
+	g++ $(OBJS) $(LIBS) $(FLAG) -o $(TARGET)
 
 $(OBJS) : %.o : %.cpp
-	g++ -c $(INCLUDE_DIR) $< -o $@
+	g++ -c $(INCLUDE_DIR) $(FLAG) $< -o $@
 
 
 
